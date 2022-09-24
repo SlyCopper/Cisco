@@ -1,0 +1,29 @@
+ASW4>en
+ASW4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ASW4(config)#in
+ASW4(config)#interface ran
+ASW4(config)#interface range fas
+ASW4(config)#interface range fastEthernet 0/3-4
+ASW4(config-if-range)#spa
+ASW4(config-if-range)#spanning-tree po
+ASW4(config-if-range)#spanning-tree portfast 
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/3 but will only
+have effect when the interface is in a non-trunking mode.
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/4 but will only
+have effect when the interface is in a non-trunking mode.
+ASW4(config-if-range)#sw
+ASW4(config-if-range)#switchport mo
+ASW4(config-if-range)#switchport mode ac
+ASW4(config-if-range)#switchport mode access 
+ASW4(config-if-range)#

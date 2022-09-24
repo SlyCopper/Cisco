@@ -1,0 +1,50 @@
+DSW2>en
+DSW2#
+DSW2#
+DSW2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+DSW2(config)#
+DSW2(config)#spa
+DSW2(config)#spanning-tree vla
+DSW2(config)#spanning-tree vlan 20 ro
+DSW2(config)#spanning-tree vlan 20 root pri
+DSW2(config)#spanning-tree vlan 20 root primary 
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#spa
+DSW2(config)#spanning-tree vla
+DSW2(config)#spanning-tree vlan 10 ro
+DSW2(config)#spanning-tree vlan 10 root sec
+DSW2(config)#spanning-tree vlan 10 root secondary 
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#end
+DSW2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+DSW2#
+DSW2#sho
+DSW2#show spa
+DSW2#show spanning-tree vla
+DSW2#show spanning-tree vlan 20
+VLAN0020
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24596
+             Address     0050.0FB6.BC00
+             This bridge is the root
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24596  (priority 24576 sys-id-ext 20)
+             Address     0050.0FB6.BC00
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/4            Desg FWD 19        128.4    P2p
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/2            Desg FWD 19        128.2    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+
+DSW2#

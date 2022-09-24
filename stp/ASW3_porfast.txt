@@ -1,0 +1,42 @@
+ASW3>en
+ASW3#sho
+ASW3#show cd
+ASW3#show cdp nei
+ASW3#show cdp neighbors 
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+DSW1         Fas 0/1          162                    3560        Fas 0/3
+DSW2         Fas 0/2          162                    3560        Fas 0/3
+ASW3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ASW3(config)#int
+ASW3(config)#interface ra
+ASW3(config)#interface range fas
+ASW3(config)#interface range fastEthernet 0/3 - 4
+ASW3(config-if-range)#spa
+ASW3(config-if-range)#spanning-tree po
+ASW3(config-if-range)#spanning-tree portfast 
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/3 but will only
+have effect when the interface is in a non-trunking mode.
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/4 but will only
+have effect when the interface is in a non-trunking mode.
+ASW3(config-if-range)#
+ASW3(config-if-range)#
+ASW3(config-if-range)#swi
+ASW3(config-if-range)#switchport mo
+ASW3(config-if-range)#switchport mode acc
+ASW3(config-if-range)#switchport mode access 
+ASW3(config-if-range)#
+ASW3(config-if-range)#
+ASW3(config-if-range)#

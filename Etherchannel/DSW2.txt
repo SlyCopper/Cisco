@@ -1,0 +1,175 @@
+DSW2>
+DSW2>
+DSW2>en
+DSW2#
+DSW2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+DSW2(config)#
+DSW2(config)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+%SPANTREE-2-RECV_PVID_ERR: Received BPDU with inconsistent peer vlan id 99 on FastEthernet0/6 VLAN1.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking FastEthernet0/6 on VLAN0001. Inconsistent local vlan.
+
+
+DSW2(config)#int
+DSW2(config)#interface fas
+DSW2(config)#interface fastEthernet 0/6
+DSW2(config-if)#
+DSW2(config-if)#swi
+DSW2(config-if)#switchport reu
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk enca
+DSW2(config-if)#switchport trunk encapsulation do
+DSW2(config-if)#switchport trunk encapsulation dot1q 
+DSW2(config-if)#
+DSW2(config-if)#swi
+DSW2(config-if)#switchport mo
+DSW2(config-if)#switchport mode tru
+DSW2(config-if)#switchport mode trunk 
+DSW2(config-if)#
+DSW2(config-if)#swi
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk na
+DSW2(config-if)#switchport trunk native vla
+DSW2(config-if)#switchport trunk native vlan 99
+DSW2(config-if)#%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/6 on VLAN0099. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/6 on VLAN0001. Port consistency restored.
+
+
+DSW2(config-if)#swi
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk all
+DSW2(config-if)#switchport trunk allowed vla
+DSW2(config-if)#switchport trunk allowed vlan 10,20,99
+DSW2(config-if)#
+DSW2(config-if)#
+DSW2(config-if)#
+DSW2(config-if)#swi
+DSW2(config-if)#switchport acc
+DSW2(config-if)#switchport access vla
+DSW2(config-if)#end
+DSW2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+DSW2#
+DSW2#
+DSW2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#inter
+DSW2(config)#interface ran
+DSW2(config)#interface range fas
+DSW2(config)#interface range fastEthernet 0/5 -6
+DSW2(config-if-range)#cha
+DSW2(config-if-range)#chan
+DSW2(config-if-range)#chann
+DSW2(config-if-range)#chann?
+channel-group  channel-protocol  
+DSW2(config-if-range)#channe
+DSW2(config-if-range)#channel
+DSW2(config-if-range)#channel-g
+DSW2(config-if-range)#channel-group 1
+% Incomplete command.
+DSW2(config-if-range)#channel-group ?
+  <1-48>  Channel group number
+DSW2(config-if-range)#channel-group 1
+% Incomplete command.
+DSW2(config-if-range)#channel-group 1 ?
+  mode  Etherchannel Mode of the interface
+DSW2(config-if-range)#channel-pro
+DSW2(config-if-range)#channel-protocol la
+DSW2(config-if-range)#channel-protocol lacp mo
+DSW2(config-if-range)#channel-protocol lacp ?
+  <cr>
+DSW2(config-if-range)#channel-protocol lacp
+DSW2(config-if-range)#chan
+DSW2(config-if-range)#channel-g
+DSW2(config-if-range)#channel-group 1 mod
+DSW2(config-if-range)#channel-group 1 mode ac
+DSW2(config-if-range)#channel-group 1 mode active 
+DSW2(config-if-range)#
+Creating a port-channel interface Port-channel 1
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%EC-5-CANNOT_BUNDLE2: Fa0/5 is not compatible with Po1 and will be suspended (vlan mask is different)
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%EC-5-CANNOT_BUNDLE2: Fa0/6 is not compatible with Po1 and will be suspended (vlan mask is different)
+
+DSW2(config-if-range)#exit
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#inter
+DSW2(config)#interface cha
+DSW2(config)#interface po
+DSW2(config)#interface port-channel 1
+DSW2(config-if)#swi
+DSW2(config-if)#switchport mo
+DSW2(config-if)#switchport mode tr
+DSW2(config-if)#switchport mode trunk 
+Command rejected: An interface whose trunk encapsulation is "Auto" can not be configured to "trunk" mode.
+DSW2(config-if)#swi
+DSW2(config-if)#switchport enca
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk enc
+DSW2(config-if)#switchport trunk encapsulation do
+DSW2(config-if)#switchport trunk encapsulation dot1q 
+DSW2(config-if)#swi
+DSW2(config-if)#switchport mo
+DSW2(config-if)#switchport mode tru
+DSW2(config-if)#switchport mode trunk 
+DSW2(config-if)#swi
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk nat
+DSW2(config-if)#switchport trunk native vla
+DSW2(config-if)#switchport trunk native vlan 99
+DSW2(config-if)#swi
+DSW2(config-if)#switchport tru
+DSW2(config-if)#switchport trunk all
+DSW2(config-if)#switchport trunk allowed vla
+DSW2(config-if)#switchport trunk allowed vlan 10,20,99
+DSW2(config-if)#
+DSW2(config-if)#
+DSW2(config-if)#exit
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#inter
+DSW2(config)#interface ran
+DSW2(config)#interface range fas
+DSW2(config)#interface range fastEthernet 0/5-6
+DSW2(config-if-range)#
+DSW2(config-if-range)#chann
+DSW2(config-if-range)#channe
+DSW2(config-if-range)#channel-gro
+DSW2(config-if-range)#channel-group 1
+% Incomplete command.
+DSW2(config-if-range)#channel-pro
+DSW2(config-if-range)#channel-protocol la
+DSW2(config-if-range)#channel-protocol lacp 
+DSW2(config-if-range)#channel-gor
+DSW2(config-if-range)#channel-gro
+DSW2(config-if-range)#channel-group 1 mo
+DSW2(config-if-range)#channel-group 1 mode ac
+DSW2(config-if-range)#channel-group 1 mode active 
+DSW2(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
+
+DSW2(config-if-range)#
+%LINK-5-CHANGED: Interface Port-channel1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Port-channel1, changed state to up
+
+DSW2(config-if-range)#

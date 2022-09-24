@@ -1,0 +1,96 @@
+Switch(config)#
+Switch(config)#inter
+Switch(config)#interface ra
+Switch(config)#interface range fas
+Switch(config)#interface range fastEthernet 0/1 - 2
+Switch(config-if-range)#
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport mo
+Switch(config-if-range)#switchport mode tru
+Switch(config-if-range)#switchport mode trunk 
+Switch(config-if-range)#
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport tru
+Switch(config-if-range)#switchport trunk all
+Switch(config-if-range)#switchport trunk allowed vla
+Switch(config-if-range)#switchport trunk allowed vlan 99
+Switch(config-if-range)#
+Switch(config-if-range)#s%SPANTREE-2-RECV_PVID_ERR: Received BPDU with inconsistent peer vlan id 99 on FastEthernet0/2 VLAN1.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking FastEthernet0/2 on VLAN0001. Inconsistent local vlan.
+
+wi
+Switch(config-if-range)#switchport %SPANTREE-2-RECV_PVID_ERR: Received BPDU with inconsistent peer vlan id 99 on FastEthernet0/1 VLAN1.
+
+%SPANTREE-2-BLOCK_PVID_LOCAL: Blocking FastEthernet0/1 on VLAN0001. Inconsistent local vla
+% Incomplete command.
+Switch(config-if-range)#
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport mo
+Switch(config-if-range)#switchport mode tru
+Switch(config-if-range)#switchport mode trunk 
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#sw
+Switch(config-if-range)#switchport tru
+Switch(config-if-range)#switchport trunk na
+Switch(config-if-range)#switchport trunk native vla
+Switch(config-if-range)#switchport trunk native vlan 99
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#s%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/1 on VLAN0099. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/1 on VLAN0001. Port consistency restored.
+
+wi
+Switch(config-if-range)#switchport %SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/2 on VLAN0099. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/2 on VLAN0001. Port consistency restored.
+
+tr
+Switch(config-if-range)#switchport trunk alo
+Switch(config-if-range)#switchport trunk al
+Switch(config-if-range)#switchport trunk allowed vla
+Switch(config-if-range)#switchport trunk allowed vlan 10,20,99
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#
+Switch(config)#inter fas
+Switch(config)#inter fastEthernet 0/3
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode acc
+Switch(config-if)#switchport mode access 
+Switch(config-if)#
+Switch(config-if)#sw
+Switch(config-if)#switchport acc
+Switch(config-if)#switchport access vla
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#
+Switch(config)#inter
+Switch(config)#interface fas
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode ac
+Switch(config-if)#switchport mode access 
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport acc
+Switch(config-if)#switchport access vla
+Switch(config-if)#switchport access vlan 20
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#hos
+Switch(config)#hostname ASW4

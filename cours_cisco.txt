@@ -1,0 +1,93 @@
+			VRRP
+. Master (Actif en HSRP)
+. Backup (Standby en HSRP)
+. plusieur routeur peuvent avoir le role de Backup contrairement au HSRP
+. Par defaut la priorite egale a 100
+. L'adresse Mac Virtuelle de la passerelle est 00-00-5E-00-01-XX
+. interface up IP elevé
+. IP multicast 224.0.0.18
+. En VRRP L'IP peut etre configuree directement sur l'interface du Routeur Master
+. HSRP 3IP et VRRP 2IP
+		
+			GLBP
+.En GLBP les routeurs peuvent avoir trois role:
+.AVG-Active Virtual Gateway
+.Standby AVG
+.AVF-Active Virtual Forwarders 
+.IP multicast 224.0.0.102
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Chap 7 Routage
+
+								-EIGRP
+-utilise 224.0.0.10 pour communiquer
+- Metrique
+   -K1 Bande Passante (utiliser par defaut)
+   -K3 Delai (utilisé par defaut)
+   -K4 fiabilite
+   -K5 charge
+		-Fonctionnement EIGRP
+-Termenologie EIGRP
+ -FD cout du chemin a partir de la source
+ -AD cout du chemin a partir du prochain routeur
+ -variance equilibrage de charge sur les chemins qui n'ont pas le meme cout
+ -successor le voisin que l'on utilise pour rejoindre une destination
+ -FS successor de secours pour une destination
+-Table de protocol EIGRP
+ -neighbor table
+ -topology table
+ -Routing table
+		-Configuraton du EIGRP
+- no-auto summary pour desactiver le resume des routes
+- ip summary-addresse eigrp 90 10.1.0.0 255.255.0.0 resumé manuelle sur une interfaces
+- show ip eigrp neighbor table des voision
+- show ip eigrp topology table topologique
+- show ip route table de routage
+		-Optimisation du EIGRP
+- passive interface 
+  -Configuration
+	-router eigrp 10
+	-passive-interface loopback 0
+        -----------------------------
+	-passive-interface default
+	-no passive-interface fa 0/0
+	-no passive-interface fa 0/1
+-Load balancing
+ -sur 4 lien peut aller jusqu'a 16 lien
+ -Configuration
+	-router eigrp 10
+	- variance 2
+-clear eigrp 10 neighbor redemare le processus eigrp
+		-configuration EIGRP IPv6
+-ipv6 unicast-routing valable pour tous les procoles EIGRP,OSPF,BGP
+-ipv6 router eigrp 1
+-no sh
+-exit
+-interface type numero
+-ipv6 eigrp 1
+-no sh
+		-verification eigrp ipv6
+-show ipv6 eigrp neighbor
+-show ipv6 eigrp topology
+-show ipv6 route
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+							-OSPF
+-metrique = 100.000 kbps/bande-passante
+-il est possible de modifier le calcul faire le calcus de la formule en cas de lien ayant une bande passante superieur à 100mbps(reference bande 8)
+ --message ospf
+-Hello relation de voisinage, envoyer toute les 30 seconde
+-LSA link state advertisement paquet qui contient les infromations sur un lien, il y'a plusieur type de LSA 1-11 
+-LSR link state Request paquet qui permet d'avoir plusieurs informmation sur un lien 
+-LSU link state update ensemble de plusieurs LSA
+-DBD Data base Description resumé de tous les liens quee le routeur connait
+tous les zones doivent etre connecte a la area 0
+		-terminologie OSPF
+Internal: les routeurs interne, routeur qui appratient a la meme area
+ABR: routeur qui font le lien entre deux area
+ASBR: routeur qui fait l'interconnexion a un autre reseau
+		-Types de paquet LSA
+Type 1: decrit les types d'interface, toune dans une meme area
+type 2: utiliser uniquement en milieu ethernet, peut pas sortir d'une zone
+type 3: route resumé envoyer dans une autre zone par l'ABR
+type 4: descrit l'ASBR
+type 5: routes redistribué par ASBR
+type 7: comme type 5 mais qui peut circuler NSSA, il est tranformé en type 5 en sortie du NSSA

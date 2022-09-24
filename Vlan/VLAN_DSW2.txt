@@ -1,0 +1,85 @@
+Switch>
+Switch>
+Switch>
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#
+Switch(config)#
+Switch(config)#hos
+Switch(config)#hostname DSW2
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#vlan 10
+DSW2(config-vlan)#vlan 20
+DSW2(config-vlan)#vlan 99
+DSW2(config-vlan)#
+DSW2(config-vlan)#
+DSW2(config-vlan)#
+DSW2(config-vlan)#exit
+DSW2(config)#
+DSW2(config)#
+DSW2(config)#int rang
+DSW2(config)#int range int
+DSW2(config)#int range fas
+DSW2(config)#int range fastEthernet 0/1 - 5
+DSW2(config-if-range)#
+DSW2(config-if-range)#
+DSW2(config-if-range)#swi
+DSW2(config-if-range)#switchport mo
+DSW2(config-if-range)#switchport mode tru
+DSW2(config-if-range)#switchport tur
+DSW2(config-if-range)#switchport tu
+DSW2(config-if-range)#switchport t
+DSW2(config-if-range)#switchport trunk enc
+DSW2(config-if-range)#switchport trunk encapsulation do
+DSW2(config-if-range)#switchport trunk encapsulation dot1q 
+DSW2(config-if-range)#
+DSW2(config-if-range)#
+DSW2(config-if-range)#
+DSW2(config-if-range)#swi
+DSW2(config-if-range)#switchport mo
+DSW2(config-if-range)#switchport mode tru
+DSW2(config-if-range)#switchport mode trunk 
+
+
+
+
+
+DSW2(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/5, changed state to up
+
+DSW2(config-if-range)#
+DSW2(config-if-range)#swi
+DSW2(config-if-range)#switchport tru
+DSW2(config-if-range)#switchport trunk na
+DSW2(config-if-range)#switchport trunk native vla
+DSW2(config-if-range)#switchport trunk native vlan 99
+DSW2(config-if-range)#
+DSW2(config-if-range)#
+DSW2(config-if-range)#
+DSW2(config-if-range)#sw
+DSW2(config-if-range)#switchport tr
+DSW2(config-if-range)#switchport trunk all
+DSW2(config-if-range)#switchport trunk allowed vla
+DSW2(config-if-range)#switchport trunk allowed vlan 10,20,99

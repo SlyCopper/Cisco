@@ -1,0 +1,43 @@
+ASW1>en
+ASW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ASW1(config)#int fa0/4
+ASW1(config-if)#span
+ASW1(config-if)#spanning-tree por
+ASW1(config-if)#spanning-tree portfast ?
+  disable  Disable portfast for this interface
+  trunk    Enable portfast on the interface even in trunk mode
+  <cr>
+ASW1(config-if)#spanning-tree portfast 
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/4 but will only
+have effect when the interface is in a non-trunking mode.
+ASW1(config-if)#swi
+ASW1(config-if)#switchport mo
+ASW1(config-if)#switchport mode ac
+ASW1(config-if)#switchport mode access 
+ASW1(config-if)#exit
+ASW1(config)#
+ASW1(config)#inter
+ASW1(config)#interface fas
+ASW1(config)#interface fastEthernet 0/5
+ASW1(config-if)#spa
+ASW1(config-if)#spanning-tree po
+ASW1(config-if)#spanning-tree portfast 
+%Warning: portfast should only be enabled on ports connected to a single
+host. Connecting hubs, concentrators, switches, bridges, etc... to this
+interface  when portfast is enabled, can cause temporary bridging loops.
+Use with CAUTION
+
+%Portfast has been configured on FastEthernet0/5 but will only
+have effect when the interface is in a non-trunking mode.
+ASW1(config-if)#
+ASW1(config-if)#swi
+ASW1(config-if)#switchport mo
+ASW1(config-if)#switchport mode acc
+ASW1(config-if)#switchport mode access 
+ASW1(config-if)#

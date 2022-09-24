@@ -1,0 +1,99 @@
+Switch>en
+Switch#
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#
+Switch(config)#inter
+Switch(config)#vla
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#vlan 99
+Switch(config-vlan)#
+Switch(config-vlan)#
+Switch(config-vlan)#exit
+Switch(config)#
+Switch(config)#
+Switch(config)#inter vla
+Switch(config)#inter fast
+Switch(config)#inter ran
+Switch(config)#inter range fas
+Switch(config)#inter range fastEthernet 0/1 - 2
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport mo
+Switch(config-if-range)#switchport mode tru
+Switch(config-if-range)#switchport mode trunk 
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport tru
+Switch(config-if-range)#switchport trunk nat
+Switch(config-if-range)#switchport trunk native vla
+Switch(config-if-range)#switchport trunk native vlan 99
+Switch(config-if-range)#%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/1 on VLAN0099. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/1 on VLAN0001. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/2 on VLAN0099. Port consistency restored.
+
+%SPANTREE-2-UNBLOCK_CONSIST_PORT: Unblocking FastEthernet0/2 on VLAN0001. Port consistency restored.
+
+
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#swi
+Switch(config-if-range)#switchport tru
+Switch(config-if-range)#switchport trunk all
+Switch(config-if-range)#switchport trunk allowed vl
+Switch(config-if-range)#switchport trunk allowed vlan 10,20,99
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#
+Switch(config-if-range)#exit
+Switch(config)#
+Switch(config)#inter
+Switch(config)#interface fas
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode acc
+Switch(config-if)#switchport mode access 
+Switch(config-if)#
+Switch(config-if)#sw
+Switch(config-if)#switchport acc
+Switch(config-if)#switchport access vla
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#inter
+Switch(config)#interface fas
+Switch(config)#interface fastEthernet 0/5
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport mo
+Switch(config-if)#switchport mode acc
+Switch(config-if)#switchport mode access 
+Switch(config-if)#
+Switch(config-if)#swi
+Switch(config-if)#switchport acc
+Switch(config-if)#switchport access vla
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#
+Switch(config)#hos
+Switch(config)#hostname ASW2
+ASW2(config)#
+ASW2(config)#

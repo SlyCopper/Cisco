@@ -1,0 +1,115 @@
+DSW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+DSW1(config)#spa
+DSW1(config)#spanning-tree vl
+DSW1(config)#spanning-tree vlan 10 rot
+DSW1(config)#spanning-tree vlan 10 ro
+DSW1(config)#spanning-tree vlan 10 root pri
+DSW1(config)#spanning-tree vlan 10 root primary 
+DSW1(config)#exit
+DSW1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+DSW1#show spanning-tree active 
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     0030.A312.36E5
+             This bridge is the root
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24586  (priority 24576 sys-id-ext 10)
+             Address     0030.A312.36E5
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/4            Altn BLK 19        128.4    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/2            Desg FWD 19        128.2    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+VLAN0020
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32788
+             Address     0002.4A57.8031
+             Cost        19
+             Port        4(FastEthernet0/4)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32788  (priority 32768 sys-id-ext 20)
+             Address     0030.A312.36E5
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/4            Root FWD 19        128.4    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/2            Desg FWD 19        128.2    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+VLAN0099
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32867
+             Address     0002.4A57.8031
+             Cost        19
+             Port        4(FastEthernet0/4)
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    32867  (priority 32768 sys-id-ext 99)
+             Address     0030.A312.36E5
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/4            Root FWD 19        128.4    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/2            Desg FWD 19        128.2    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+DSW1#show spanning-tree ?
+  active     Report on active interfaces only
+  detail     Detailed information
+  interface  Spanning Tree interface status and configuration
+  summary    Summary of port states
+  vlan       VLAN Switch Spanning Trees
+  <cr>
+DSW1#show spanning-tree vla
+DSW1#show spanning-tree vlan ?
+  <1-4094>  VLAN id
+DSW1#show spanning-tree vlan 10
+VLAN0010
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    24586
+             Address     0030.A312.36E5
+             This bridge is the root
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+
+  Bridge ID  Priority    24586  (priority 24576 sys-id-ext 10)
+             Address     0030.A312.36E5
+             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time  20
+
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- --------------------------------
+Fa0/3            Desg FWD 19        128.3    P2p
+Fa0/4            Desg LSN 19        128.4    P2p
+Fa0/5            Desg FWD 19        128.5    P2p
+Fa0/2            Desg FWD 19        128.2    P2p
+Fa0/1            Desg FWD 19        128.1    P2p
+
+DSW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+DSW1(config)#
+DSW1(config)#
+DSW1(config)#spa
+DSW1(config)#spanning-tree vla
+DSW1(config)#spanning-tree vlan 20 ro
+DSW1(config)#spanning-tree vlan 20 root se
+DSW1(config)#spanning-tree vlan 20 root secondary 
